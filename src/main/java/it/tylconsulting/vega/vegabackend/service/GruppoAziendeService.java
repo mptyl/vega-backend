@@ -25,4 +25,19 @@ public class GruppoAziendeService {
     public long countGruppiAziende(){
         return gruppoAziendeRepository.count();
     }
+
+    public void deleteGruppoAziende(GruppoAziende gruppo) {
+        gruppoAziendeRepository.delete(gruppo);
+    }
+
+    public void saveGruppoAziende(GruppoAziende gruppo) {
+        if (gruppo == null) {
+            System.err.println("Contact is null. Are you sure you have connected your form to the application?");
+            return;
+        }
+        gruppoAziendeRepository.save(gruppo);
+    }
+
+
+
 }

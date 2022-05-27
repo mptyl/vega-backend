@@ -15,7 +15,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * and some desktop browsers.
  *
  */
-@SpringBootApplication(scanBasePackages = {"it.tylconsulting.vega.vegamodel"})
+@SpringBootApplication(scanBasePackages = {"it.tylconsulting.vega"})
 @Theme(value = "vegabackend")
 @PWA(name = "Vega Backend", shortName = "Vega Backend", offlineResources = {})
 @NpmPackage(value = "line-awesome", version = "1.3.0")

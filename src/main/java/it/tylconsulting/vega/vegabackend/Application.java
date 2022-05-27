@@ -1,4 +1,4 @@
-package com.example.application;
+package it.tylconsulting.vega.vegabackend;
 
 import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.page.AppShellConfigurator;
@@ -15,9 +15,9 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * and some desktop browsers.
  *
  */
-@SpringBootApplication
-@Theme(value = "mytodo")
-@PWA(name = "My Todo", shortName = "My Todo", offlineResources = {})
+@SpringBootApplication(scanBasePackages = {"it.tylconsulting.vega.vegamodel"})
+@Theme(value = "vegabackend")
+@PWA(name = "Vega Backend", shortName = "Vega Backend", offlineResources = {})
 @NpmPackage(value = "line-awesome", version = "1.3.0")
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
 

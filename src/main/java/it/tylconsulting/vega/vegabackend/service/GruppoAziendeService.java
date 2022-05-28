@@ -3,6 +3,7 @@ package it.tylconsulting.vega.vegabackend.service;
 import it.tylconsulting.vega.vegamodel.db.model.GruppoAziende;
 import it.tylconsulting.vega.vegamodel.db.repository.GruppoAziendeRepository;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class GruppoAziendeService {
 
     public List<GruppoAziende> findAllGruppiziende(String stringFilter){
         if (StringUtils.isEmpty(stringFilter))
-            return (List<GruppoAziende>) gruppoAziendeRepository.findAll();
+            return (List<GruppoAziende>) gruppoAziendeRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
         else
             return gruppoAziendeRepository.search(stringFilter);
     }
@@ -26,16 +27,16 @@ public class GruppoAziendeService {
         return gruppoAziendeRepository.count();
     }
 
-    public void deleteGruppoAziende(GruppoAziende gruppo) {
-        gruppoAziendeRepository.delete(gruppo);
+    public void deleteGruppoAziende(GruppoAziende gruppoAziende) {
+        gruppoAziendeRepository.delete(gruppoAziende);
     }
 
-    public void saveGruppoAziende(GruppoAziende gruppo) {
-        if (gruppo == null) {
-            System.err.println("Contact is null. Are you sure you have connected your form to the application?");
+    public void saveGruppoAziende(GruppoAziende gruppoAziende) {
+        if (gruppoAziende == null) {
+            System.err.println("GruppoAziende is null. Are you sure you have connected your form to the application?");
             return;
         }
-        gruppoAziendeRepository.save(gruppo);
+        gruppoAziendeRepository.save(gruppoAziende);
     }
 
 

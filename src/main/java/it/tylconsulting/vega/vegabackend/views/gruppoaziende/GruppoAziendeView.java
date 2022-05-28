@@ -1,4 +1,4 @@
-package it.tylconsulting.vega.vegabackend.views.list;
+package it.tylconsulting.vega.vegabackend.views.gruppoaziende;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
@@ -11,10 +11,11 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import it.tylconsulting.vega.vegabackend.service.GruppoAziendeService;
+import it.tylconsulting.vega.vegabackend.views.main.MainLayout;
 import it.tylconsulting.vega.vegamodel.db.model.GruppoAziende;
 
 @PageTitle("Gruppo Aziende | Vega Backend")
-@Route(value = "")
+@Route(value = "gruppoaziende", layout= MainLayout.class)
 public class GruppoAziendeView extends VerticalLayout {
     Grid<GruppoAziende> grid = new Grid<>(GruppoAziende.class);
     TextField filterText=new TextField();

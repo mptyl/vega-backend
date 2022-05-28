@@ -1,4 +1,4 @@
-package it.tylconsulting.vega.vegabackend.views.list;
+package it.tylconsulting.vega.vegabackend.views.gruppoaziende;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;

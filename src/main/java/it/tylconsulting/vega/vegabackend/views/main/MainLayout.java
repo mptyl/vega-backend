@@ -14,6 +14,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 import it.tylconsulting.vega.vegabackend.views.aziende.AziendeView;
 import it.tylconsulting.vega.vegabackend.views.gruppoaziende.GruppoAziendeView;
+import it.tylconsulting.vega.vegabackend.views.questeditor.QuestEditorView;
 
 @Route(value="")
 public class MainLayout extends AppLayout {
@@ -54,8 +55,12 @@ public class MainLayout extends AppLayout {
         RouterLink aziendeLink = new RouterLink("Aziende", AziendeView.class);
         aziendeLink.setHighlightCondition(HighlightConditions.sameLocation());
 
+        RouterLink questeditorLink = new RouterLink("QuestEditor", QuestEditorView.class);
+        questeditorLink.setHighlightCondition(HighlightConditions.sameLocation());
+
+
         AccordionPanel accordionPanelDestinatari=new AccordionPanel("Aziende e Destinatari",
-                new VerticalLayout(gruppoaziendeLink,aziendeLink));
+                new VerticalLayout(gruppoaziendeLink,aziendeLink, questeditorLink));
         accordion.addClassName("accordionMenu");
         accordionPanelDestinatari.addThemeVariants(DetailsVariant.FILLED);
         accordion.add(accordionPanelDestinatari);
